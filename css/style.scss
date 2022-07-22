@@ -1,0 +1,436 @@
+/* NUll */
+
+/*Обнуление стилей*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+img {
+    vertical-align: top;
+}
+
+html,
+body {
+    height: 100%;
+    color: rgb(0, 0, 0);
+    overflow-x: hidden;
+
+}
+
+html {
+    /* по умолчанию */
+    font-size: 16px;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+// MENU
+.menu {
+    max-width: 600px;
+    background: rgb(183, 238, 183);
+    padding: 30px 15px;
+
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 500;
+
+    transition: 0.3s;
+
+
+
+
+
+
+
+    // .menu__nav
+
+    &__nav {
+        flex: 1 1 auto;
+
+        @media(max-width: 600px) {
+            position: fixed;
+            top: 70px;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            padding: 50px 15px;
+
+            background: rgb(123, 161, 123);
+
+            transition: 0.3s ease 0s;
+        }
+
+
+
+    }
+
+    // .menu__list
+
+    &__list {
+        display: flex;
+        gap: 15px;
+
+        @media(max-width: 600px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 100px;
+        }
+    }
+
+    // .menu__item
+
+    &__item {}
+
+    // .menu__link
+
+    &__link {
+        font-size: 16px;
+        font-family: Sans-serif;
+        color: black;
+        text-transform: lowercase;
+
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @media(max-width: 600px) {
+            font-size: 30px;
+        }
+    }
+
+    // .menu__icon
+
+    &__icon {
+
+        flex: 0 1 30px;
+        height: 20px;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        background: none;
+
+        @media(max-width: 600px) {
+            display: flex;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        span {
+            width: 100%;
+            height: 2px;
+            background: black;
+        }
+
+        &:before {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: black;
+        }
+
+        &:after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: black;
+        }
+    }
+
+
+}
+
+
+.register__form {
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    justify-content: center;
+
+}
+
+.register__input {
+    border: 1px solid black;
+    padding: 25px;
+
+}
+
+.register__input::placeholder {
+    font-size: 24px;
+}
+
+
+.collection {
+    background: rgb(223, 223, 223);
+    padding: 50px 25px;
+}
+
+
+
+.list__item {
+    margin-bottom: 15px;
+}
+
+.list__link {
+    font-size: 20px;
+    font-family: Sans-serif;
+    color: black;
+
+}
+
+.list__link::after {
+    content: '';
+    width: 0%;
+    height: 1px;
+    background: black;
+    display: block;
+
+    transition-duration: 0.2s;
+}
+
+.list__link:hover::after {
+    content: '';
+    width: 10%;
+    height: 1px;
+    background: black;
+    display: block;
+}
+
+
+.bold {
+    font-weight: 900;
+}
+
+[class*='__container'] {
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+    background: rgb(215, 186, 253);
+    border-radius: 15px;
+    text-align: center;
+    padding: 25px;
+
+    display: none;
+
+}
+
+
+
+
+
+
+@keyframes title-animate {
+    0% {
+        transform: translateX(-100%)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+
+.text__item {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+}
+
+.text__item::first-letter {
+    font-size: 20px;
+    color: blue;
+}
+
+
+
+
+
+
+
+.links {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+
+}
+
+.link {
+    font-size: 25px;
+    color: black;
+    margin: 0px 0px 5px 0px;
+
+    transition: 0.2s;
+
+
+}
+
+// BTNS
+
+.buttons {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.button {
+    padding: 25px 50px;
+    background: rgb(127, 6, 241);
+    border-radius: 10px;
+
+    font-size: 25px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    box-shadow: 0px 10px 1px black;
+    transition-duration: 0.2s;
+
+    &_active {
+        background: rgb(80, 1, 150);
+        box-shadow: 0px 5px 1px black;
+
+    }
+
+    &_open {
+        background: rgb(166, 2, 207);
+        padding: 26px 51px;
+        box-shadow: 0px 5px 1px black;
+
+    }
+
+
+}
+
+
+.page {
+    text-align: center;
+    padding: 20px;
+    background: rgb(218, 218, 218);
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .some-block-prev {
+        background: rgb(149, 174, 255);
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .block {
+        padding: 10px;
+        background: rgb(255, 187, 232);
+        border-radius: 10px;
+    }
+
+    .some-block-next {
+        padding: 10px;
+        border-radius: 10px;
+        background: rgb(228, 199, 255);
+    }
+}
+
+.about {
+    padding: 50px 15px;
+    background: #333;
+
+    // .about__title
+
+    &__title {
+        background: none;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 5px;
+
+    }
+
+    // .about__text
+
+    &__text {
+        color: whitesmoke;
+        font-family: Sans-serif;
+        line-height: 34px;
+
+    }
+}
+
+
+
+
+// JS CLASSES
+
+
+.active {
+    left: 0;
+}
+
+.menu_active {
+    background: rgb(77, 119, 77);
+}
+
+
+
+.link_active {
+    padding: 15px;
+    color: white;
+    background: black;
+    border-radius: 10px;
+}
+
+.info__text_active {
+    display: block;
+}
+
+// .button_active {
+//     background: rgb(141, 124, 156);
+// }
